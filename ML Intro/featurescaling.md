@@ -1,0 +1,46 @@
+
+## Feature scaling
+
+Feature scaling is a technique used in machine learning to standardize the range of independent variables or features of data. It's important because many machine learning algorithms perform better or converge faster when features are on a relatively similar scale.
+
+#### Understanding with an example
+
+![image](https://github.com/saiabhiramjaini/portfolio/assets/115941546/f67b960f-05a3-4295-8d87-65bcd8f2c524)
+
+we see three people with different salaries and ages:
+
+- Person 1: $70,000 and 45 years
+- Person 2: $60,000 and 44 years
+- Person 3: $52,000 and 40 years
+
+The salary values are in tens of thousands, while age is in decades. This large difference in scale could cause problems for some machine learning algorithms, as they might give too much importance to salary simply because its numerical values are larger.
+
+![image](https://github.com/saiabhiramjaini/portfolio/assets/115941546/57c52218-fe91-4062-8994-fa6e96d594b3)
+
+Two common methods of feature scaling:
+- a) Normalization: This scales all values to a range between 0 and 1. The formula is:
+        
+        X' = (X - X_min) / (X_max - X_min)
+- b) Standardization: This transforms the data to have a mean of 0 and a standard deviation of 1. The formula is:
+        
+        X' = (X - μ) / σ
+    
+    Where μ is the mean and σ is the standard deviation.
+
+![image](https://github.com/saiabhiramjaini/portfolio/assets/115941546/d4b443b2-41a1-4afe-ae4a-97639420af8f)
+
+we see the result of applying normalization to our data:
+
+For salary:
+
+- Highest salary (70,000) becomes 1
+- Lowest salary (52,000) becomes 0
+- Middle salary (60,000) becomes 0.444
+
+For age:
+
+- Oldest age (45) becomes 1
+- Youngest age (40) becomes 0
+- Middle age (44) becomes 0.8
+
+Now both features (salary and age) are on the same scale (0 to 1), making it easier for machine learning algorithms to process them without being biased by their original scales.
